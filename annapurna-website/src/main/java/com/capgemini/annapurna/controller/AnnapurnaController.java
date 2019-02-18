@@ -313,6 +313,13 @@ public class AnnapurnaController {
 		// System.out.println(totalAmount);
 		return "AddressForm";
 	}
+	
+	@RequestMapping("/ewallet")
+	public String getPassMoneyForm(Model model) {
+		model.addAttribute("totalAmount", cart.getTotalAmount());
+		return "passMoney";
+
+	}
 
 	@RequestMapping("/cart/removeFoodProduct")
 	public String removeFromCart(/* @ModelAttribute Cart cart, */@RequestParam("restaurantId") Integer restaurantId,
